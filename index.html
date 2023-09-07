@@ -1,0 +1,92 @@
+<html>
+<head>
+    <!--Adição de ícone com fontAwesome-->
+    <script src="https://kit.fontawesome.com/2a076b2e69.js" crossorigin="anonymous"></script>
+
+    <title>Menu de navegação</title>
+    <style>
+    body {
+        background:#EEE;
+    }
+    aside {
+        position:fixed;
+        top:0;
+        right:0;
+        z-index:999;
+        display:flex;
+    }
+    #menu-opener {
+        width:40px;
+        height:40px;
+        cursor:pointer;
+        margin-top:10px;
+        margin-right:10px;
+    }
+    #menu-area {
+        width:200px;
+        height:100vh;
+        background:#ccc;
+        overflow-x:hidden;
+        overflow-y:auto;
+        transition: all ease .5s;
+    }
+    #menu-area ul, #menu-area li {
+        padding:0;
+        list-style:none;
+    }
+    #menu-area li {
+        display:block;
+        padding:10px;
+        color:#555;
+        cursor:pointer;
+    }
+    #menu-area li:hover {
+        background:#DDD;
+    }
+
+    .menu-visible {
+        width: 200px !important; /* Visível */
+    }
+    .menu-hidden {
+        width: 0px !important;
+    }
+    </style>
+    </head>
+<body>
+<h1 id="titulo">Seja bem vindo(a)</h1>
+<aside>
+    <div id="menu-opener">
+        <i class="fa-solid fa-bars" width="36px"></i>
+    </div>
+    <div id="menu-area" class="menu-hidden">
+        <ul>
+            <li>Home</li>
+            <li>Sobre</li>
+            <li>Contato</li>
+        </ul>
+    </div>
+</aside>
+
+
+
+<script>
+
+let menuIcon = document.querySelector('#menu-opener');
+let menuArea = document.querySelector('#menu-area');
+
+menuIcon.addEventListener('click', () => {
+    if(menuArea.classList.contains('menu-hidden')) {
+        menuArea.classList.remove('menu-hidden');
+        menuArea.classList.add('menu-visible');
+    }else{
+        menuArea.classList.remove('menu-visible');
+        menuArea.classList.add('menu-hidden');
+    }
+})
+
+
+
+</script>
+
+</body>
+</html>
